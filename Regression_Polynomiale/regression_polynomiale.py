@@ -13,13 +13,10 @@ y = dataset.iloc[:, -1].values
 # Construction du modèle
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
-poly_reg = PolynomialFeatures(degree = 4)
+poly_reg = PolynomialFeatures(degree = 5)
 X_poly = poly_reg.fit_transform(X)
 regressor = LinearRegression()
 regressor.fit(X_poly, y)
-
-# Faire de nouvelles prédictions
-regressor.predict(15)
 
 # Visualiser les résultats
 plt.scatter(X, y, color = 'red')
